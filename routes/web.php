@@ -18,3 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['prefix' => '/'],function (){
+    Route::get('/', 'SiteBasicViewController@welcome');
+    Route::get('/teacherPage', 'SiteBasicViewController@welcome');
+    Route::get('/', 'SiteBasicViewController@welcome');
+});
